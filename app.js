@@ -18,6 +18,7 @@ const tipos = require('./routes/tipo')
 
 
 
+
 app.use('/api/v1/tests', test)
 app.use('/api/v1/generos', generos)
 app.use('/api/v1/directores', directores)

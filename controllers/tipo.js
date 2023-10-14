@@ -27,6 +27,25 @@ const createTipo = async (req = request, res = response) => {
 };
 
 
+/**
+ * Consultar todos los tipos
+ */
+const getTipos = async (req, res) => {
+    try {
+        const { estado } = req.query;
+
+        const tipos = await Tipo.find({ estado });
+
+        return res.json(tipos);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ mensaje: error });
+    }
+}
+
+
 module.exports = {
-    createTipo
+    createTipo,
+    getTipos
 }

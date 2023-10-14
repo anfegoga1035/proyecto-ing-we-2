@@ -11,7 +11,7 @@ router.post('/', createGenero)
 /**
  * consultar todos los géneros
  */
-
+router.get('/', getGeneros)
 /**
  * Consultar un género por su ID
  */

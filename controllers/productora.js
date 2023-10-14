@@ -32,6 +32,24 @@ const createProductora = async (req = request, res = response) => {
 
 
 
+/**
+ * Consultar todas las productoras
+ */
+const getProductoras = async (req, res) => {
+    try {
+        const { estado } = req.query;
+
+        const productoras = await Productora.find({ estado });
+
+        return res.json(productoras);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ mensaje: error });
+    }
+}
+
+
 module.exports = {
     createProductora
 };

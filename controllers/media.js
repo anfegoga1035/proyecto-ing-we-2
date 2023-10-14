@@ -34,6 +34,24 @@ const createMedia = async (req = request, res = response) => {
     }
 };
 
+/**
+ * Consultar todos los medios
+ */
+const getMedias = async (req, res) => {
+    try {
+        const { estado } = req.query;
+
+        const medias = await Media.find({ estado });
+
+        return res.json(medias);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ mensaje: error });
+    }
+}
+
 module.exports = {
-    createMedia
+    createMedia,
+    getMedias
 }

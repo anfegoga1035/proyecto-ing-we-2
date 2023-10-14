@@ -34,7 +34,19 @@ const createGenero = async (req = request, res = response) => {// endpoint
 /**
  * consultar todos los géneros
  */
+const getGeneros = async (req = request, res = response) => {// endpoint
+    try {
+        const { estado } = req.query
 
+        const generos = await Genero.find({ estado })
+
+        return res.json(generos)
+
+    } catch(error) {
+        console.log(error)
+        return res.status(500).json({msj: error})
+    }
+}
 /**
  * Consultar un género por su ID
  */

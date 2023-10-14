@@ -26,6 +26,26 @@ const createDirector = async (req = request, res = response) => {
     }
 };
 
+
+/**
+ * Consultar todos los directores
+ */
+const getDirectores = async (req, res) => {
+    try {
+        const { estado } = req.query;
+
+        const directores = await Director.find({ estado });
+
+        return res.json(directores);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ mensaje: error });
+    }
+}
+
+
 module.exports = {
-    createDirector
+    createDirector,
+    getDirectores
 }
