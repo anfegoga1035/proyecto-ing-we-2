@@ -51,5 +51,6 @@ const getProductoras = async (req, res) => {
 
 
 module.exports = {
-    createProductora
+    createProductora,
+    getProductoras
 };

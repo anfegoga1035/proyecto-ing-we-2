@@ -59,5 +59,6 @@ const getGeneros = async (req = request, res = response) => {// endpoint
  * Borrar un género
  */
 module.exports = {
-    createGenero
+    createGenero,
+    getGeneros
 }
