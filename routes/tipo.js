@@ -12,3 +12,4 @@ router.post('/', createTipo);
 router.get('/', getTipos)
 
 module.exports = router;
+//akahdkha
